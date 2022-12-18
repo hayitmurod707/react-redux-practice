@@ -1,0 +1,17 @@
+{
+	"compilerOptions": {
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./src",
+		"jsx": "react",
+		"module": "commonjs",
+		"noImplicitAny": false,
+		"target": "es6",
+		"paths": {
+			"Redux/*": ["Redux/*"],
+			"Counter/*": ["Counter/*"],
+			"Users/*": ["Users/*"]
+		}
+	},
+	"exclude": ["node_modules", "build", ".vscode", ".idea"],
+	"include": ["src/**/*"]
+}
