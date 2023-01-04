@@ -1,6 +1,6 @@
-import Counter from "Counter";
+import Counter from "Counter/index";
 import { Fragment } from "react";
-import Users from "Users";
+import Users from "Users/index";
 const App = () => (
 	<Fragment>
 		<Counter />

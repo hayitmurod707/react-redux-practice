@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { addUser, removeUser } from "Redux/users";
+import { addUser, getUsers, removeUser } from "Redux/users";
 import "./style.css";
 const Users = () => {
 	const users = useSelector(state => state.users.users);
@@ -16,6 +16,7 @@ const Users = () => {
 	return (
 		<div className="users-container">
 			<h1>Users</h1>
+			<button type='button' onClick={() => dispatch(getUsers())}>Get all users</button>
 			<form onSubmit={addUsers}>
 				<input type='text' value={user} onChange={e => setUser(e.target.value)} />
 				<button type='submit'>Add</button>
