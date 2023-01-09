@@ -1,6 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
 import logger from "redux-logger";
-import thunk from "redux-thunk";
 import counter from './counter';
 import users from './users';
 const store = configureStore({
@@ -10,9 +9,9 @@ const store = configureStore({
   },
 	middleware: getDefaultMiddleware => {
 		if(process.env.NODE_ENV === 'development') {
-			return getDefaultMiddleware().concat(logger).concat(thunk);
+			return getDefaultMiddleware({ serializableCheck: false }).concat(logger);
 		} else {
-			return getDefaultMiddleware();
+			return getDefaultMiddleware({ serializableCheck: false });
 		}
 	},
 	devTools: process.env.NODE_ENV === 'development',
